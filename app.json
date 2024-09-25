@@ -1,0 +1,44 @@
+{
+  "expo": {
+    "name": "apms-payroll",
+    "slug": "apms-payroll",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/proz_logo.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/proz_logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/proz_logo.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "in.proz.apms"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/inter_18pt_medium.ttf"
+          ]
+        }
+      ],
+      "expo-secure-store"
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "e21804d6-3483-42e9-afb7-c5c8594ab8af"
+      }
+    }
+  }
+}
