@@ -50,30 +50,30 @@ const SplashScreen = () => {
   
   const { width } = Dimensions.get('window');
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-     justifyContent: 'center',
-    alignItems: 'center',
-
-  },
-  innerContainer: {
-    width: '100%',
-    height:'100%',
-    alignItems: 'center',
-  },
-  linearLayout: {
-    margin: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-     padding: 10,  
-    width:350 , 
-    height: 350, 
-  },
-  image: {
-    width:150 , 
-    height: 150, 
-  },
-});
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fafafa',  
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    innerContainer: {
+      width: width,
+      alignItems: 'center',
+    },
+    linearLayout: {
+      margin: 20,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#fafafa',  
+      padding: 10,  
+      width:350 , 
+      height: 350, 
+    },
+    image: {
+      width:150 , 
+      height: 150, 
+    },
+  });
   
   export default SplashScreen;

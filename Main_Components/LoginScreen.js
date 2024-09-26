@@ -1,7 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { View, Text, StyleSheet,Image,TextInput ,ActivityIndicator ,TouchableOpacity,Alert} from 'react-native';
  import axios from 'axios';
-import DeviceInfo from 'react-native-device-info';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
  
@@ -22,8 +21,17 @@ import APINameComponents from '../Constants/APINameComponents';
 import WarningDialog from '../Dialog/WarningDialog';
 import FailureDialog from '../Dialog/FailureDialog';
 import SuccessDialog from '../Dialog/FailureDialog';
-  
 
+
+import AboutSvg from '../assets/about1.svg';
+
+
+import * as Application from 'expo-application';
+
+ 
+// or ES6+ destructured imports
+
+ 
 
 
  const LoginScreen = ({ navigation }) => {
@@ -43,20 +51,14 @@ import SuccessDialog from '../Dialog/FailureDialog';
   const [fresponsemsg,setfresponsemsg]=useState('');
   const [wresponsemsg,setwresponsemsg]=useState('');
 
- 
+
 
 
   //variable declaration
 
   // default call function
   useEffect(() => {
-
-  //console.log(" id details "," assaf "+Device.installationId +" device info "+DeviceInfo.getDeviceId());
-  let deviceId = DeviceInfo.getDeviceId();
-  console.log("device id "," id "+deviceId);
-    //const deviceId = Device.os === Device.OS.ANDROID ? Device.androidId : Device.deviceId;
-     
-
+   
     // Get the unique device ID
     setDeviceId("8bdad70785414480");
     let timers = [];
@@ -222,10 +224,9 @@ import SuccessDialog from '../Dialog/FailureDialog';
       <CommonHeader    title="Login"
         onBackPress={handleBackPress}/>
       <SafeAreaView style={[CommonStyle.container, ]}>
-      <View  >
-        <Image source={require('../assets/profile.png') } style={{height:'100',width:'100'}}
-                        onError={(error) => console.log('Image load error:', error.nativeEvent.error)}
-                        />
+      <View>
+       <Image source={require('../assets/proz_logo_old.png')} style={{alignItems:'center',flax:1,textAlign:'center'}}width={50} height={50} />
+
       <Text style={[CommonStyle.title,{marginTop:50}]}>Login</Text>
       <Text style={CommonStyle.versionCode}>Version Code : {StringComponent.VersionCode}</Text>
 
@@ -290,6 +291,7 @@ import SuccessDialog from '../Dialog/FailureDialog';
       <TouchableOpacity style={[CommonStyle.button,{marginTop:40}]} onPress={handleLogin}  >
         <Ionicons name="checkmark" size={20} color={ConColors.n_green} style={CommonStyle.buttonIcon} />
         <Text style={CommonStyle.buttonText}>Verify</Text>
+        <Image source={require('../assets/about1.svg')} />
       </TouchableOpacity>
     </View>
 

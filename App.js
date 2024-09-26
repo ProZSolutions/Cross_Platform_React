@@ -1,5 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, StyleSheet, Text, View ,Dimensions ,Image} from 'react-native';
+
+  import { name as appName } from './app.json';
+
  
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -13,8 +16,7 @@ import SplashScreen from './Main_Components/SplashScreen';
 
 const Stack = createStackNavigator();
 
-
- export default function App() {
+ function App() {
   return (
     <NavigationContainer>
     <Stack.Navigator initialRouteName="Splash">
@@ -26,6 +28,9 @@ const Stack = createStackNavigator();
 
   );
 }
+ export default App;
+
+
 
 
  
