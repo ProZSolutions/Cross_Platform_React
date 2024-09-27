@@ -34,9 +34,9 @@ const SuccessDialog = ({ visible, message }) => {
     >
       <View style={styles.overlay}>
         <Animated.View style={[styles.dialogContainer, { opacity: fadeAnim }]}>
-           <Text style={[styles.message,{color:Colors.failure_color}]}>{message}</Text>
+           <Text style={[styles.message,{color:Colors.success_color}]}>{message}</Text>
           <View style={styles.buttonContainer}>
-            <TouchableOpacity style={[styles.button,{backgroundColor:Colors.failure_color}]}  >
+            <TouchableOpacity style={[styles.button,{backgroundColor:Colors.success_color}]}  >
               <Text style={styles.buttonText}>Cancel</Text>
             </TouchableOpacity>
            

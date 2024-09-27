@@ -10,6 +10,7 @@ import { ImageBackground } from 'react-native';
 
 import LoginScreen from './LoginScreen';
 import Dashboard from './Dashboard';
+ 
 
 
 
@@ -17,9 +18,11 @@ const SplashScreen = () => {
     const navigation = useNavigation();
   
     useEffect(() => {
-      const checkToken = async () => {
+ 
+       const checkToken = async () => {
         try {
           // Simulate a delay
+          
           setTimeout(async () => {
             const token = await AsyncStorage.getItem('token');
             console.log("token"," as "+token); 

@@ -144,8 +144,9 @@ import * as Application from 'expo-application';
         if (response?.ok) {
            if(jsonResponse?.status==='success'){
               if(jsonResponse?.emp_details){
-                const { emp_details, token_type, bearer_token,emp_no } = jsonResponse;
+                const { emp_details, token_type, bearer_token,emp_no,role,name } = jsonResponse;
                 console.log("api_url"," emp ",emp_details," no ",emp_details.Employee_No);
+                if (role !== "10") {
                     if (emp_details) {
                
                       if (emp_details?.Employee_No) {
@@ -160,15 +161,18 @@ import * as Application from 'expo-application';
                       if (emp_details?.Role_Name ) {
                         await AsyncStorage.setItem('AdminRoleName', emp_details.Role_Name.join('@'));
                       }
-                    }  
+                    } 
+                  } 
                     
                     
-                    
+                    await AsyncStorage.setItem('EmppName',name);
                     await AsyncStorage.setItem('username', username);
                     await AsyncStorage.setItem('token', `${token_type} ${bearer_token}`);
                     setsresponsemsg('Logged in Successfully..');
                     setsuccessDialogVisible(true);
-                    navigation.navigate('Dashboard');
+                    setTimeout(async () => {
+                      navigation.navigate('Dashboard');
+                    }, 1500);
                     
               }
            }else{
@@ -224,10 +228,13 @@ import * as Application from 'expo-application';
       <CommonHeader    title="Login"
         onBackPress={handleBackPress}/>
       <SafeAreaView style={[CommonStyle.container, ]}>
-      <View>
-       <Image source={require('../assets/proz_logo_old.png')} style={{alignItems:'center',flax:1,textAlign:'center'}}width={50} height={50} />
+      <View style={CommonStyle.title}>
+        <View>
+        <Image source={require('../assets/proz_logo_old.png')} style={{alignItems:'center',flax:1,textAlign:'center',marginTop:30}} width={50} height={50} />
 
-      <Text style={[CommonStyle.title,{marginTop:50}]}>Login</Text>
+        </View>
+
+      <Text style={[CommonStyle.title,{marginTop:20}]}>Login</Text>
       <Text style={CommonStyle.versionCode}>Version Code : {StringComponent.VersionCode}</Text>
 
       <View style={CommonStyle.inputContainer}>
@@ -289,8 +296,8 @@ import * as Application from 'expo-application';
       )}
       
       <TouchableOpacity style={[CommonStyle.button,{marginTop:40}]} onPress={handleLogin}  >
-        <Ionicons name="checkmark" size={20} color={ConColors.n_green} style={CommonStyle.buttonIcon} />
-        <Text style={CommonStyle.buttonText}>Verify</Text>
+        <AboutSvg height={20} width={20}   />
+         <Text style={CommonStyle.buttonText}>Verify</Text>
         <Image source={require('../assets/about1.svg')} />
       </TouchableOpacity>
     </View>
