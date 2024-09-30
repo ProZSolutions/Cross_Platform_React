@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
         flex:8
       },
       rounded_rect:{
-        backgroundColor: 'white', // Replace with your color value
+        backgroundColor: Colors.n_bg, // Replace with your color value
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
         height: '100%', // Adjust height as needed
@@ -43,11 +43,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-     
+        backgroundColor:Colors.n_blue
       },
       outer_layout:{
-         backgroundColor: Colors.n_org,
-        marginLeft:1,
+         marginLeft:1,
  
       },
       selection_icon:{
@@ -64,5 +63,31 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase',
         fontSize: 12,
       }
+    ,
+    date_display_text:{
+      marginLeft:3,
+      justifyContent: 'center',
+     alignItems: 'center',
+     marginRight: 10,
+     color: Colors.n_blue,
+     textTransform: 'uppercase',
+     fontSize: 11,
+   },
+   date_outer:{
+      marginTop:10,
+      flexDirection:'row',
+      alignItems:'center',
+      alignSelf:'center',
+
+   },
+   shapecontainer:{
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems:'center',
+    alignSelf:'center',
+    marginBottom: 30,
+    marginTop: 10,
+    width:'80%'
+   }
   });
   export default styles;

@@ -87,13 +87,41 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textTransform: 'uppercase',
       },
-
-
-
-
-
-
-  
+      smallText: {
+         color: Colors.gray,
+        fontSize: 12,
+          alignItems:'center',
+        alignSelf:'center'
+       },
+       padding_button:{
+       
+          backgroundColor: Colors.n_blue, // Replace with your color or use a dynamic value
+           borderColor: '#000', // Change to your border color
+          borderRadius: 18,
+          paddingLeft: 10,
+          marginRight: 10,
+          height: 40,
+          alignItems: 'center',
+          flexDirection: 'row',
+      
+       },
+       check_icon:{
+        width: 20,
+        height: 20,
+       },
+       check_text: {
+         color: '#FFFFFF',
+        textTransform: 'uppercase',
+        marginLeft: 5,
+        marginRight: 10,
+        fontSize: 13,
+      },
+      org_background:{
+        backgroundColor:Colors.n_org
+      },
+      blue_background:{
+        backgroundColor:Colors.n_blue
+      },  
     title: {
       fontSize: 20,
       fontStyle:'normal',
@@ -134,7 +162,17 @@ const styles = StyleSheet.create({
         marginRight: 30,
         padding: 5, // Adjust if needed
       },
-    
+      outer_padding_box: {
+        margin:15,
+        width:'90%',
+        alignItems:'center',
+        alignSelf:'center',
+        borderWidth: 1,
+        borderColor: Colors.white, // Replace with your color
+        backgroundColor: Colors.white, // Solid color (white)
+        borderRadius: 6, // Rounded corners
+        padding: 16, // Optional: Add padding
+       },
   });
   export default styles;
   

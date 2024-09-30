@@ -56,12 +56,18 @@ import * as Application from 'expo-application';
 
   //variable declaration
 
+  const generateUniqueId = () => {
+    console.log("uniqueid"," called ");
+    return Math.random().toString().slice(2, 18); // Generates a string of 16 digits
+};
+
+
   // default call function
   useEffect(() => {
    
-    // Get the unique device ID
-    setDeviceId("8bdad70785414480");
-    let timers = [];
+     // Get the unique device ID
+ //   setDeviceId("8bdad70785414480");
+    let timers = [];  
   
     const setupTimer = (isVisible, setVisible) => {
       if (isVisible) {
@@ -102,7 +108,13 @@ import * as Application from 'expo-application';
        return;
     }
 
-    if (username.trim() === '') {    
+ 
+
+
+
+    if(deviceId==''){
+        setDeviceId(generateUniqueId());
+    }else if (username.trim() === '') {    
       setwresponsemsg('Enter Username');
       setwarningDialogVisible(true);
     } else if (password.trim() === '') {
@@ -120,6 +132,14 @@ import * as Application from 'expo-application';
   //login functionality
   const login = async (username, password, deviceId, versionName) => {
     try{
+
+      await AsyncStorage.setItem('EmppName',"Keerthga");
+      await AsyncStorage.setItem('username', "Keerthiga");
+      await AsyncStorage.setItem('token', "Bearer 282|i9UrmU1JrwwzNLTMTJWImu2vWOvZbXROPElJ2zOI");
+      await AsyncStorage.setItem("deviceid","8bdad70785414480");
+
+
+
         setLoading(true);
         const apiUrl = StringComponent.APIURL+APINameComponents.login;
         console.log("api_url"," url "+apiUrl+" usernae "+username+
@@ -140,6 +160,11 @@ import * as Application from 'expo-application';
           }),
         });
         const jsonResponse = await response.json();
+
+
+       
+
+
         console.log("api_url"," json ",jsonResponse);
         if (response?.ok) {
            if(jsonResponse?.status==='success'){

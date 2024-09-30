@@ -7,8 +7,10 @@ const Colors = {
     white:'#FFFFFF',
     n_org:'#F49D12',
     black:'#000',
+    n_bg:'#fafafa',
     success_color:'#0DB984',
     failure_color:'#FF0854',
+    gray:'AAA4A4',
 
 
    };

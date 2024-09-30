@@ -13,6 +13,15 @@ import Dashboard from './Dashboard';
  
 
 
+const clearStorage = async () => {
+
+  try { await AsyncStorage.clear();
+  
+  } catch (e) {
+  
+  // error clearing storage console.error('Failed to clear storage', e);
+  
+  } };
 
 const SplashScreen = () => {
     const navigation = useNavigation();
@@ -22,6 +31,7 @@ const SplashScreen = () => {
        const checkToken = async () => {
         try {
           // Simulate a delay
+        //  clearStorage();
           
           setTimeout(async () => {
             const token = await AsyncStorage.getItem('token');
